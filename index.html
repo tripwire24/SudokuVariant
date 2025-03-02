@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Play Sudoku with numbers, emojis, or fruits - even offline!">
+  <meta name="theme-color" content="#6C5CE7">
+  <title>Sudoku Variants</title>
+  <link rel="stylesheet" href="src/css/style.css">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="public/icons/icon-192x192.png">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="game-container">
+    <header>
+      <h1>Sudoku Variants</h1>
+      <div class="stats">
+        <div class="completed">
+          <span id="completed-count">0</span>
+          <span>Completed</span>
+        </div>
+        <div class="timer">
+          <span id="timer">00:00</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="game-options">
+      <div class="option-section">
+        <h2>Game Type</h2>
+        <div class="option-buttons">
+          <button id="game-numbers" class="active">Numbers</button>
+          <button id="game-faces">Faces</button>
+          <button id="game-fruits">Fruits</button>
+        </div>
+      </div>
+      
+      <div class="option-section">
+        <h2>Difficulty</h2>
+        <div class="option-buttons">
+          <button id="difficulty-easy" class="active">Easy</button>
+          <button id="difficulty-medium">Medium</button>
+          <button id="difficulty-hard">Hard</button>
+          <button id="difficulty-expert">Expert</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="board-container">
+      <div id="game-board" class="game-board"></div>
+    </div>
+
+    <div class="controls">
+      <div class="control-buttons">
+        <button id="reset-btn" class="reset-btn">Reset Board</button>
+        <button id="new-game-btn" class="new-game-btn">New Game</button>
+      </div>
+    </div>
+
+    <!-- Completion Modal -->
+    <div id="completion-modal" class="modal">
+      <div class="modal-content">
+        <h2>Congratulations!</h2>
+        <p>You completed the puzzle!</p>
+        <div class="completion-stats">
+          <div>
+            <span>Time:</span>
+            <span id="completion-time">00:00</span>
+          </div>
+          <div>
+            <span>Difficulty:</span>
+            <span id="completion-difficulty">Easy</span>
+          </div>
+          <div>
+            <span>Game Type:</span>
+            <span id="completion-type">Numbers</span>
+          </div>
+        </div>
+        <button id="play-again-btn">Play Again</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="src/js/sudoku-generator.js"></script>
+  <script src="src/js/game.js"></script>
+  <script>
+    // Register service worker for PWA
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js')
+          .then(registration => {
+            console.log('ServiceWorker registration successful with scope: ', registration.scope);
+          })
+          .catch(error => {
+            console.log('ServiceWorker registration failed: ', error);
+          });
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Sudoku Variants Icons</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    h1 {
+      color: #6C5CE7;
+    }
+    
+    .instructions {
+      background: #f0f0f0;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    
+    .icon-preview {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 30px;
+    }
+    
+    .icon {
+      text-align: center;
+    }
+    
+    .icon-canvas {
+      width: 192px;
+      height: 192px;
+      background: #6C5CE7;
+      border-radius: 40px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      font-size: 60px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .icon-label {
+      font-size: 14px;
+      color: #333;
+    }
+    
+    .grid-overlay {
+      position: absolute;
+      width: 70%;
+      height: 70%;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      gap: 2px;
+    }
+    
+    .grid-cell {
+      background: rgba(255, 255, 255, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Create Icons for Sudoku Variants</h1>
+  
+  <div class="instructions">
+    <h2>Instructions</h2>
+    <p>This page shows previews of icon designs for the Sudoku Variants game. Since we can't create real image files through this interface, you'll need to:</p>
+    <ol>
+      <li>Screenshot these icon previews</li>
+      <li>Use an image editor to crop and save them as PNG files</li>
+      <li>Create versions in the following sizes: 72x72, 96x96, 128x128, 144x144, 152x152, 192x192, 384x384, and 512x512</li>
+      <li>Save them with filenames like "icon-192x192.png" in the public/icons folder</li>
+    </ol>
+    <p>Alternatively, you can use an online icon generator tool to create proper PWA icons.</p>
+  </div>
+  
+  <div class="icon-preview">
+    <div class="icon">
+      <div class="icon-canvas" id="numbers-icon">
+        <div class="grid-overlay">
+          <div class="grid-cell">1</div>
+          <div class="grid-cell">2</div>
+          <div class="grid-cell">3</div>
+          <div class="grid-cell">4</div>
+          <div class="grid-cell">5</div>
+          <div class="grid-cell">6</div>
+          <div class="grid-cell">7</div>
+          <div class="grid-cell">8</div>
+          <div class="grid-cell">9</div>
+        </div>
+      </div>
+      <div class="icon-label">Numbers Icon</div>
+    </div>
+    
+    <div class="icon">
+      <div class="icon-canvas" id="emoji-icon" style="background: #00CEC9;">
+        <div class="grid-overlay">
+          <div class="grid-cell">😀</div>
+          <div class="grid-cell">😎</div>
+          <div class="grid-cell">🥳</div>
+          <div class="grid-cell">😍</div>
+          <div class="grid-cell">🤔</div>
+          <div class="grid-cell">😮</div>
+          <div class="grid-cell">🙂</div>
+          <div class="grid-cell">😆</div>
+          <div class="grid-cell">🤩</div>
+        </div>
+      </div>
+      <div class="icon-label">Emoji Icon</div>
+    </div>
+    
+    <div class="icon">
+      <div class="icon-canvas" id="fruit-icon" style="background: #FF7675;">
+        <div class="grid-overlay">
+          <div class="grid-cell">🍎</div>
+          <div class="grid-cell">🍌</div>
+          <div class="grid-cell">🍇</div>
+          <div class="grid-cell">🍊</div>
+          <div class="grid-cell">🍓</div>
+          <div class="grid-cell">🍉</div>
+          <div class="grid-cell">🥝</div>
+          <div class="grid-cell">🍒</div>
+          <div class="grid-cell">🍐</div>
+        </div>
+      </div>
+      <div class="icon-label">Fruit Icon</div>
+    </div>
+  </div>
+  
+  <script>
+    // This would normally generate actual image files, but we can't do that here
+    document.addEventListener('DOMContentLoaded', () => {
+      console.log('You can take screenshots of these icons and create image files from them');
+    });
+  </script>
+</body>
+</html>
